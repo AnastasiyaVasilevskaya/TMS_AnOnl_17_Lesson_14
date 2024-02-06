@@ -18,8 +18,13 @@ public class ThreadOne extends Thread {
             }
         }
 
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i <= 20; i++) {
             System.out.println(getName() + " hi: " + i);
+            try {
+                sleep(500);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 }
